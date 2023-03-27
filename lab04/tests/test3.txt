@@ -1,0 +1,19 @@
+begin
+    var s = 1; var i = 1;
+    while i < 5 do
+        begin
+            var k = 1; var l = 0; var p = 1;
+            while p < i do
+                k := k + 1;
+                if l < p then
+                    l := l + 1;
+                    p := 1
+                else
+                    p := p + 1
+                fi
+            end;
+            s := s + 6 * k + p - l;
+            i := i + 1
+        end
+    end
+end

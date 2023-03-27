@@ -1,0 +1,12 @@
+begin
+    var z = 1; var p = 4; var q = 5;
+    while q != 0 do
+        if q % 2 == 1 then
+            z := z * p
+        else
+            skip
+        fi;
+        q := q / 2;
+        p := p * p
+    end
+end

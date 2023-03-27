@@ -1,0 +1,9 @@
+begin
+    var x = 42;
+    var y = 69;
+    if x != y then
+        x := x * 10
+    else
+        y := y * 10
+    fi
+end

@@ -1,0 +1,8 @@
+begin
+    var x = 1;
+    var y = 0;
+    while x <= 10 do
+        y := y + x;
+        x := x + 1
+    end
+end

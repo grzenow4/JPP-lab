@@ -1,0 +1,44 @@
+-- Program -----------------------------------------------
+Prog. Program ::= Stmt ;
+
+-- Declarations ------------------------------------------
+DVar. Decl ::= "var" Ident "=" Exp ;
+separator Decl ";" ;
+
+-- Statements --------------------------------------------
+SSkip.   Stmt ::= "skip" ;
+SVar.    Stmt ::= Ident ":=" Exp ;
+SSem.    Stmt ::= Stmt ";" Stmt ;
+SIfElse. Stmt ::= "if" BExp "then" Stmt "else" Stmt "fi" ;
+SWhile.  Stmt ::= "while" BExp "do" Stmt "end" ;
+SBlock.  Stmt ::= "begin" [Decl] Stmt "end" ;
+
+-- Expressions -------------------------------------------
+EAdd. Exp  ::= Exp AddOp Exp1 ;
+EMul. Exp1 ::= Exp1 MulOp Exp2 ;
+ENeg. Exp2 ::= "-" Exp3 ;
+EInt. Exp3 ::= Integer ;
+EVar. Exp3 ::= Ident ;
+coercions Exp 3 ;
+
+-- Binary Expressions ------------------------------------
+BOr.  BExp  ::= BExp1 "or" BExp ;
+BAnd. BExp1 ::= BExp2 "and" BExp1 ;
+BRel. BExp2 ::= Exp RelOp Exp ;
+BNeg. BExp2 ::= "not" BExp3 ;
+BT.   BExp3 ::= "true" ;
+BF.   BExp3 ::= "false" ;
+coercions BExp 3 ;
+
+-- Operators ---------------------------------------------
+Plus.  AddOp ::= "+" ;
+Minus. AddOp ::= "-" ;
+Times. MulOp ::= "*" ;
+Div.   MulOp ::= "/" ;
+Mod.   MulOp ::= "%" ;
+LT.    RelOp ::= "<" ;
+LE.    RelOp ::= "<=" ;
+GT.    RelOp ::= ">" ;
+GE.    RelOp ::= ">=" ;
+EQ.    RelOp ::= "==" ;
+NE.    RelOp ::= "!=" ;
