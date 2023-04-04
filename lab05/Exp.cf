@@ -1,0 +1,7 @@
+ELet . Exp ::= "let" Ident "=" Exp "in" Exp1;
+EAdd . Exp1 ::= Exp1 "+" Exp2;
+ESub . Exp1 ::= Exp1 "-" Exp2;
+EMul . Exp2 ::= Exp2 "*" Exp3;
+EInt . Exp3 ::= Integer;
+EVar . Exp3 ::= Ident;
+coercions Exp 3;
